@@ -1,0 +1,2 @@
+#!/bin/sh
+exec chpst -u _glowing_bear:_glowing_bear -C /opt/glowing-bear /usr/bin/npm start

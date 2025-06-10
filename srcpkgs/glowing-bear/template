@@ -1,0 +1,30 @@
+# Template file for 'glowing-bear'
+pkgname=glowing-bear
+version=0.10.0
+revision=1
+hostmakedepends="nodejs"
+depends="nodejs"
+short_desc="Web client for WeeChat"
+maintainer="KeepBotting <branon@branon.me>"
+license="GPL-3.0-or-later"
+homepage="https://glowing-bear.org"
+#distfiles="https://github.com/KeepBotting/glowing-bear/archive/refs/tags/v${version}.tar.gz"
+distfiles="https://github.com/KeepBotting/glowing-bear/archive/0912ab1e20128757094f4ecf25d48e91cc653d3f.tar.gz"
+checksum=85d6a3538f3a1204a4a66ef14dc2ed15edc971709a54b220d30360d4123b7974
+system_accounts="_glowing_bear"
+skiprdeps="/opt/glowing-bear/node_modules/@tauri-apps/cli-linux-x64-musl/cli.linux-x64-musl.node"
+
+do_build() {
+	npm install
+	npm run build
+}
+
+do_install() {
+	vmkdir opt
+	vmkdir opt/glowing-bear
+	vcopy * opt/glowing-bear
+}
+
+post_install() {
+	vsv glowing-bear
+}
