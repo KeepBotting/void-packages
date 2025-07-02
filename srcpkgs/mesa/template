@@ -1,6 +1,6 @@
 # Template file for 'mesa'
 pkgname=mesa
-version=25.1.4
+version=25.1.5
 revision=1
 build_style=meson
 _llvmver=19
@@ -24,7 +24,7 @@ license="MIT, LGPL-2.1-or-later"
 homepage="https://www.mesa3d.org/"
 changelog="https://docs.mesa3d.org/relnotes.html"
 distfiles="https://mesa3d.org/archive/mesa-${version}.tar.xz"
-checksum=164872a5e792408aa72fecd52b7be6409724c4ad81700798675a7d801d976704
+checksum=3c4f6b10ff6ee950d0ec6ea733cc6e6d34c569454e3d39a9b276de9115a3b363
 
 build_helper="qemu"
 build_options="wayland"
